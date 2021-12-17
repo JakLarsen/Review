@@ -8,6 +8,105 @@
 
 
 
+# def find_mode(our_list):
+
+#     freq_map = {
+
+#     }
+
+#     for num in our_list:
+#         if num in freq_map:
+#             freq_map[num] += 1
+#         else:
+#             freq_map[num] = 1
+    
+#     max_mode = -9999999
+#     max_freq = 0
+#     for num in freq_map:
+#         if freq_map[num] >= max_freq:
+#             max_freq = freq_map[num]
+#             if num > max_mode:
+#                 max_mode = num
+
+#     return max_mode
+# print(find_mode([0,0,1,1,1,2,2,2,2,3,3,3,3])) # 3
+# print(find_mode([0,1,1,1,2,2,2,2,3,3])) # 2
+    
+# def find_median(our_list):
+
+#     if len(our_list) % 2 == 0:
+#         return (our_list[len(our_list)//2] + our_list[len(our_list)//2 +1])/2
+#     else:
+#         return our_list[len(our_list)//2]
+# print(find_median([0,1,2,3,4,5,6,7,8,9])) # 4.5
+# print(find_median([0,1,2,3,4,5,6,7,8])) # 4
+
+# class Node:
+
+#     def __init__(self, val = None, next = None):
+#         self.val = val
+#         self.next = next
+    
+# class LinkedList:
+
+#     def __init__(self, head, tail):
+#         self.head = head
+#         self.tail = tail
+    
+#     def print_every_other(self):
+
+#         i = 1
+#         currentNode = self.head
+#         while currentNode:
+#             if i % 2 != 0:
+#                 print(currentNode.val)
+
+# def recursive_fibonacci_nth(n):
+
+#     #BASE CASE
+#     if n <= 1:
+#         return n
+#     return (recursive_fibonacci_nth(n-1) + recursive_fibonacci_nth(n-2))
+# print(recursive_fibonacci_nth(9))
+
+
+# def bracket_match(bracket_list):
+
+#     bracket_dic = {
+#         ']': '[',
+#         ')': '(',
+#         '}': '{'
+#     }
+#     left_bracket_list = []
+
+#     for bracket in bracket_list:
+#         #If it's a left-sided bracket
+#         if bracket not in bracket_dic:
+#             #Add to pop_queue
+#             left_bracket_list.append(bracket)
+#         #closing-bracket
+#         elif bracket in bracket_dic:
+#             #no opening-brackets to close
+#             if not left_bracket_list:
+#                 return False
+#             #Check if it matches last opening bracket
+#             elif left_bracket_list[-1] == bracket_dic[bracket]:
+#                 left_bracket_list.pop()
+#             else:
+#                 return False
+
+#     if left_bracket_list:
+#         return False
+#     else:
+#         return True
+
+# print(bracket_match(['[',']','(',')'])) #True
+# print(bracket_match([']','[','(',')'])) #False
+# print(bracket_match(['[','(',')',']'])) #True
+                
+
+
+
 # def average_of_pair_is_target(our_list, target):
 
 #     value_set = set()
