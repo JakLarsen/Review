@@ -4,8 +4,13 @@
 # 12/17
 
 
+#Flask is a webframework of libraries built to make development for web applications in python more cohesive
+#Python is an interpreted language, which means it's compiled to bytecode before being executed by an interpreted on a virtual machine
+#C++ is compiled to machine code and executed by the CPU
 
+# our_ints = [int(i) for i in input().split()]
 
+# s = input().split('+') #Gives us a list of strings where they were previously separated by a '+'
 
 
 # 12/16/21

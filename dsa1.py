@@ -3,73 +3,229 @@
 
 
 
-                    # 12/16
+                    # 12/16 - 12/17
 
 
 
 
-#LL STACK INSERT AND POP TAIL (OR HEAD - PICK)
+# def average_of_pair_is_target(our_list, target):
 
-class Node:
+#     value_set = set()
 
-    def __init__(self, val = None, next = None):
-        self.val = val
-        self.next = next
+#     for value in our_list:
+#         if 2*target-value in value_set:
+#             return True
+#         value_set.add(value)
+#     return False
 
-class LinkedList:
+# print(average_of_pair_is_target([1,2,3,4,5,6,7,8], 7)) #True (8,6)
+# print(average_of_pair_is_target([1,2,3,4,5,6,7,8], 14)) #False
 
-    def __init__ (self, head = None, tail = None):
-        self.head = head
-        self.tail = tail
+# def count_pairs_sum_to_target(our_list, target):
+#     count = 0
 
-    def traverse(self):
-        if self.head == None:
-            print('Nothing in LL.')
-        else:
-            currentNode = self.head
-            while currentNode:
-                print(currentNode.val, currentNode)
-                currentNode = currentNode.next
+#     value_set = set()
+
+#     for value in our_list:
+#         if target - value in value_set:
+#             count += 1
+#         value_set.add(value)
+#     return count
+
+# print(count_pairs_sum_to_target([0,1,2,3,4,5,6,7,8], 9)) #4
+# print(count_pairs_sum_to_target([0,1,2,3,4,5,6,7,8], 25)) #0
+
+# def pair_sum_to_target(our_list, target):
+
+#     value_set = set()
+
+#     for value in our_list:
+
+#         if target - value in value_set:
+#             return True
+#         value_set.add(value)
+
+#     return False
+# print(pair_sum_to_target([0,1,2,3,4,5], 8)) #True, 5,3
+# print(pair_sum_to_target([0,1,2,3,4,5], 11)) #False
+
+# def basic_binary(our_list = [1,2,3,4,5,6,7,8,9], target = 11):
+
+#     left = 0
+#     right = len(our_list)-1
+
+#     while left <= right:
+#         mid = (left + right)//2
+
+#         if target == our_list[mid]:
+#             return mid
+#         elif target < our_list[mid]:
+#             right = mid - 1
+#         elif target > our_list[mid]:
+#             left = mid + 1
+
+#     return -1
+# print(basic_binary())
+
+
+# def recursive_fibonacci_nth(n):
+
+#     #BASE CASE
+#     if n <= 1:
+#         return n
+#     else:
+#         return(recursive_fibonacci_nth(n-1) + recursive_fibonacci_nth(n-2))
+# print(recursive_fibonacci_nth(9))
+
+# def print_fibonacci_first_n(n):
+#     for i in range(n):
+#         print(recursive_fibonacci_nth(i))
+
+# print_fibonacci_first_n(9)
+
+# def recursive_countdown(n):
+
+#     print(n)
+
+#     #BASE CASE
+#     if n == 0:
+#         return
+#     else:
+#         return recursive_countdown(n-1)
+# recursive_countdown(5)
+
+
+# def factorial_recursion(n):
+
+#     #BASE CASE
+#     if n == 1:
+#         return 1
+#     else:
+#         return n * factorial_recursion(n-1)
+# print(factorial_recursion(5))
+
+# def get_mean(our_list):
+#     return sum(our_list)/len(our_list)
+
+# print(get_mean([1,2,3,4,5,6,7,8,9,10]))
+
+
+# #LL STACK INSERT AND POP TAIL (OR HEAD - PICK)
+
+# class Node:
+
+#     def __init__(self, val = None, next = None):
+#         self.val = val
+#         self.next = next
+
+# class LinkedList:
+
+#     def __init__ (self, head = None, tail = None):
+#         self.head = head
+#         self.tail = tail
+
+#     def traverse(self):
+#         print('TRAVERSING')
+#         if self.head == None:
+#             print('Nothing in LL.')
+#         else:
+#             currentNode = self.head
+#             while currentNode:
+#                 print(currentNode.val, currentNode)
+#                 currentNode = currentNode.next
+
+#     def LL_peak_head(self):
+#         print(f'Head is: {self.head}, {self.head.val}')
+
+#     def LL_peak_tail(self):
+#         print(f'Tail is: {self.tail}, {self.tail.val}')
+
+#     def LL_append(self, Node):
+#         if self.head == None:
+#             self.head = Node
+#             self.tail = Node
+#         else:
+#             self.tail.next = Node
+#             self.tail = Node
+
+#     def LL_pop(self):
+
+#         #0 Nodes
+#         if self.head == None:
+#             return None
+#         #1 Node
+#         elif self.head.next == None:
+#             pop_val = self.head.val
+#             self.head = None
+#             self.tail = None
+#             return pop_val
+#         #2 + Nodes
+#         # else:
+#         else:
+#             currentNode = self.head
+#             #second to last Node will be in currentNode after
+#             while currentNode.next.next:
+#                 currentNode = currentNode.next
+#             #Grab tail to return
+#             pop_val = currentNode.next.val
+#             #Set second to last to tail
+#             currentNode.next = None
+#             self.tail = currentNode
+#             return pop_val
     
-    def LL_peak_tail(self):
-        print(f'Tail is: {self.tail}, {self.tail.val}')
+#     def LL_print_every_other(self):
 
-    def LL_append(self, Node):
-        if self.head == None:
-            self.head = Node
-            self.tail = Node
-        else:
-            self.tail.next = Node
-            self.tail = Node
+#         #0 Nodes
+#         if self.head == None:
+#             print('LL is empty.')
+        
+#         #Nodes in list
+#         counter = 1
+#         currentNode = self.head
+#         while currentNode:
+#             if counter % 2 != 0:
+#                 print(f'Node: {counter} is: {currentNode.val}.')
+#             currentNode =  currentNode.next
+#             counter += 1
 
-    def LL_pop(self):
-        second_to_last = self.head
+# #Basic LL methods 
+# our_LL = LinkedList()
+# a_Node = Node('a')
+# b_Node = Node('b')
+# c_Node = Node('c')
+# c_Node = Node('d')
+# c_Node = Node('e')
+# our_LL.traverse()
+# our_LL.LL_append(a_Node)
+# our_LL.traverse()
+# our_LL.LL_pop()
+# our_LL.traverse()
+# our_LL.LL_append(a_Node)
+# our_LL.LL_append(b_Node)
+# our_LL.LL_peak_tail()
+# our_LL.traverse()
+# our_LL.LL_pop()
+# our_LL.LL_peak_tail()
+# our_LL.traverse()
 
-        #0 Nodes
-        if self.head == None:
-            return None
-        #1 Node
-        elif self.head.next == None:
-            return self.head.val
-        #2 + Nodes
-        else:
-            return
 
-    
-our_LL = LinkedList()
-a_Node = Node('a')
-b_Node = Node('b')
-c_Node = Node('c')
-our_LL.traverse()
-our_LL.LL_append(a_Node)
-our_LL.traverse()
-our_LL.LL_append(b_Node)
-our_LL.LL_append(c_Node)
-our_LL.traverse()
-our_LL.LL_peak_tail()
-our_LL.LL_pop()
-our_LL.traverse()
-our_LL.LL_peak_tail()
+# #Print every other
+# num_LL = LinkedList()
+# first = Node(1)
+# second = Node(2)
+# third = Node(3)
+# fourth = Node(4)
+# fifth = Node(5)
+# num_LL.LL_append(first)
+# num_LL.LL_append(second)
+# num_LL.LL_append(third)
+# num_LL.LL_append(fourth)
+# num_LL.LL_append(fifth)
+# num_LL.traverse()
+# num_LL.LL_print_every_other()
+
+
+
 
 
 
