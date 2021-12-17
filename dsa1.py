@@ -6,7 +6,63 @@
                     # 12/16 - 12/17
 
 
+# def same_freq_digits(n1, n2):
+    
+#     freq_map_n1 = {}
+#     freq_map_n2 = {}
 
+#     for digit in str(n1):
+#         if digit in freq_map_n1:
+#             freq_map_n1[digit] += 1 
+#         else:
+#             freq_map_n1[digit] = 1
+    
+#     for digit in str(n2):
+#         if digit in freq_map_n2:
+#             freq_map_n2[digit] += 1 
+#         else:
+#             freq_map_n2[digit] = 1
+    
+#     if len(str(n1)) != len(str(n2)): 
+#         return False 
+    
+#     for digit_key in freq_map_n1:
+#         if digit_key not in freq_map_n2:
+#             return False
+#         elif freq_map_n1[digit_key] != freq_map_n2[digit_key]:
+#             return False
+            
+#     return True
+
+# print(same_freq_digits(515,155)) # True
+# print(same_freq_digits(515,15)) # False
+# print(same_freq_digits(51,155)) # False
+# print(same_freq_digits(512,155)) # False
+# print(same_freq_digits(2,3)) # False
+# print(same_freq_digits(2,2)) # True
+
+# def check_palindrome(our_string):
+
+#     start = 0
+#     end = len(our_string) - 1
+
+#     while end > start:
+#         if our_string[start] != our_string[end]:
+#             return False
+#         end -= 1
+#         start += 1
+    
+#     return True
+
+# print(check_palindrome('tacocat')) # True
+# print(check_palindrome('tacocats')) # False
+
+# def python_palindrome(s):
+
+#     return s == s[::-1]
+
+# print(python_palindrome('tacocat')) # True
+# print(python_palindrome('tacocats')) # False
 
 # def find_mode(our_list):
 
