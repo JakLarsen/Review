@@ -1,5 +1,7 @@
 #Basic Linked List implementation
 
+import time
+
 
 class Node:
 
@@ -182,6 +184,17 @@ if __name__ == '__main__':
     our_LL.remove_all(2)
 
     our_LL.traverse() # 1 3
+
+    start = time.time()
+    for i in range(100000):
+        our_LL.append_front(i)
+    print('100,000 iterations of appending to front LL: ', time.time() - start, 'seconds')
+
+    our_list = []
+    start = time.time()
+    for i in range(100000):
+        our_list.insert(0,i)
+    print('100,000 iterations for appending to front List: ', time.time() - start, 'seconds')
 
 
 
