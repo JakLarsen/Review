@@ -1,10 +1,64 @@
 
+# 12/20/21
+
+
+
+
+
+                    # 12/19/21
+
+
+# def recursive_sum(n):
+#      return 1 if n == 1 else n + recursive_sum(n-1)
+# print(recursive_sum(5))
+
 
 
 
 
                     # 12/16 - 12/17
 
+
+
+
+# def check_anagram(s1, s2):
+
+#     if len(s1) != len(s2):
+#         return False
+    
+#     #Now you can either sort or make freq_maps
+#     #Sort both = 2 * NLOGN Then iterate + N
+#     #Freq maps = 2 N then iterate + N
+
+#     freq_map_s1 = {}
+#     freq_map_s2 = {}
+
+#     for char in s1:
+#         if char in freq_map_s1:
+#             freq_map_s1[char] += 1
+#         else:
+#             freq_map_s1[char] = 1
+
+#     for char in s2:
+#         if char in freq_map_s2:
+#             freq_map_s2[char] += 1
+#         else:
+#             freq_map_s2[char] = 1
+    
+#     for char_key in freq_map_s1:
+#         if char_key not in freq_map_s2:
+#             return False
+#         elif freq_map_s1[char_key] != freq_map_s2[char_key]:
+#             return False
+    
+#     return True
+
+# print(check_anagram('slyfox', 'loxsyf')) # True
+# print(check_anagram('slyfox', 'loxsy')) # False
+# print(check_anagram('slyfox', 'loxsyfa')) # False
+
+
+    
 
 # def same_freq_digits(n1, n2):
     
