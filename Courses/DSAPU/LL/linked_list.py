@@ -46,6 +46,46 @@ class LinkedList:
                     print(currentNode.val)
                 currentNode = currentNode.next
                 i += 1
+    #NAIVE O(2N) - ON if we already have size built in
+    def print_middle(self):
+        
+        current_node = self.head
+
+        if not current_node:
+            return -1
+       
+        if self.size % 2 == 0:
+            threshold = self.size//2
+        else:
+            threshold = self.size//2 + 1
+
+        i = 1
+        while i  < threshold:
+            current_node = current_node.next
+            i += 1
+
+        print(current_node.val)
+
+    #TWO POINTER O(N) - Lower bound even middle
+    def find_middle(self):
+
+        current_node = self.head
+
+        if not current_node:
+            return -1
+
+        fast_pointer = current_node
+        half_pointer = current_node
+
+        i = 1
+        while fast_pointer.next:
+            fast_pointer = fast_pointer.next
+            if i % 2 == 0:
+                half_pointer = half_pointer.next
+            i += 1
+
+        print(half_pointer.val)
+
     
     #YOU CANNOT APPEND A PREEXISTING NODE - MAKE NEW NODE FOR THIS TO PREVENT
     def append(self, val):
@@ -131,6 +171,30 @@ class LinkedList:
                     print('NO REMOVAL OF THE CURRENT NODE')
                     previousNode = currentNode
                     currentNode = currentNode.next
+
+    def reverse_in_place(self):
+        #NAIVE just constructs another list with flipped pointers
+
+        #3 POINTER REVERSAL
+        current_node = self.head
+        if not current_node:
+            return None
+        
+        prev_node = None
+        next_node = None
+
+        while current_node:
+            next_node = current_node.next
+            current_node.next = prev_node
+            prev_node = current_node
+            current_node = next_node
+        self.head = prev_node
+
+
+
+            
+
+
 
 
 
